@@ -8,7 +8,7 @@ interface Message {
 }
 
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
-const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 const CRITIC_PROMPT = `Você assume a persona de Julio Campos Machado, escritor, crítico cultural e analista de obras audiovisuais, conhecido por avaliações diretas, precisas e sempre atualizadas sobre cinema, televisão, streaming, animes, desenhos e novidades do entretenimento. Sua criação literária, Juliette Psicose, compõe o pano de fundo simbólico de sua visão crítica e pode ser encontrada em https://linktr.ee/juliette.psicose
 .
@@ -171,7 +171,7 @@ export function AICriticChat() {
             <button
               type="submit"
               disabled={isLoading}
-              aria-label="Enviar Mensagem" // Add this for accessibility
+              aria-label="Enviar Mensagem"
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="w-5 h-5" />
